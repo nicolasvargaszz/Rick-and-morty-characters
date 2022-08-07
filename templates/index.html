@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rick and Morty</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-10 bg-slate-900">
+  <!-- sistema de grillas INICIO -->
+  <header class="table-header-group">
+    <h1 class="text-ellipsis overflow-hidden tracking-widest text-opacity-100">Personajes de Rick and Morty</h1>
+    <p class="font-sans md:font-serif text-opacity-100	"> Rick and Morty es una serie de televisión estadounidense de animación para adultos </p>
+  </header>
+  <div class="grid grid-cols-4 gap-8">
+    {% for personaje in personajes %}
+    <!-- card de cada personaje INICIO -->
+    <div class="max-w-sm rounded overflow-hidden shadow-lg border border-black mt-5 bg-white">
+      <img class="w-full" src="{{ personaje['image'] }}" alt="Sunset in the mountains">
+      <div class="px-6 py-4">
+        <!-- Titulo -->
+        <div class="font-bold text-xl mb-2">Nombre: {{ personaje["name"] }}</div>
+        <!-- Titulo -->
+        <!-- caracteristicas -->
+        <p class="text-gray-700 text-base">
+          Especie: {{ personaje["species"] }}
+        </p>
+        <!-- caracteristicas -->
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+      </div>
+    </div>
+    <!-- card de cada personaje FIN -->
+    {% endfor %}
+  </div>
+  <!-- sistema de grillas FIN -->
+</body>
+</html>
